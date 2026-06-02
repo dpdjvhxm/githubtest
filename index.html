@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages 테스트</title>
+    <title>GitHub Pages 완벽 테스트</title>
     <style>
+        /* 이번엔 확 티가 나도록 다크 테마로 변경했습니다 */
         body {
             font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
             display: flex;
@@ -12,39 +13,73 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f6f8fa; /* 깃허브 배경색 느낌 */
+            background-color: #1e1e2e;
+            color: #cdd6f4;
         }
         .container {
             text-align: center;
             padding: 50px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border: 1px solid #d0d7de;
+            background-color: #313244;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #45475a;
         }
         h1 {
-            color: #0969da; /* 깃허브 블루 포인트 컬러 */
+            color: #a6e3a1; /* 네온 그린 */
             margin-bottom: 10px;
         }
         p {
-            color: #57606a;
             font-size: 1.1em;
-            margin-top: 0;
+            margin-bottom: 30px;
         }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #8c959f;
+        button {
+            background-color: #89b4fa;
+            color: #1e1e2e;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: #74c7ec;
+            transform: translateY(-2px);
+        }
+        #result {
+            margin-top: 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f38ba8; /* 핑크 레드 */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎉 배포 성공!</h1>
-        <p>GitHub Pages 'Deploy from Branch' 테스트가 정상적으로 완료되었습니다.</p>
-        <div class="footer">
-            이제 이 파일을 수정하거나 다른 웹 프로젝트 파일들로 교체해 보세요.
-        </div>
+        <h1>🚀 새로운 버전 적용 완료!</h1>
+        <p>이 어두운 화면이 보인다면 덮어쓰기가 완벽하게 성공한 것입니다.</p>
+        
+        <button id="actionBtn">여기를 클릭해 보세요</button>
+        
+        <div id="result">버튼 클릭 횟수: 0</div>
     </div>
+
+    <script>
+        // 자바스크립트 동작 확인을 위한 카운터 기능
+        let count = 0;
+        const btn = document.getElementById('actionBtn');
+        const resultText = document.getElementById('result');
+        
+        btn.addEventListener('click', function() {
+            count++; // 클릭할 때마다 1씩 증가
+            resultText.textContent = `버튼 클릭 횟수: ${count}`;
+            
+            // 5번 클릭하면 알림창 띄우기
+            if (count === 5) {
+                alert('자바스크립트가 완벽하게 동작하고 있습니다! 🎉');
+            }
+        });
+    </script>
 </body>
 </html>
